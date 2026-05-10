@@ -1,8 +1,11 @@
 <h1>LED Arch @ Recurse</h1>
 <p>In time for NGW 2026 - works at the hub only. A more permanent public URL/API/domain will come later.</p>
+<hr>
 <p>How to use/send pixels? use the WLED JSON API to send data to 10.100.3.132</p>
 <p><a href="https://kno.wled.ge/interfaces/json-api/">WLED JSON API docs</a></p>
-<p>See Python example here: <a href="https://github.com/gregsadetsky/recurse-led-arch">github.com/gregsadetsky/recurse-led-arch</a></p>
+<p>also see the WLED web ui at <a href="10.100.3.132">http://10.100.3.132</a></p>
+<p>and see Python example here: <a href="https://github.com/gregsadetsky/recurse-led-arch">github.com/gregsadetsky/recurse-led-arch</a></p>
+<hr>
 
 <h2>Mini FAQ</h2>
 <dl>
@@ -10,6 +13,14 @@
   <dd>Software: go to <a href="http://10.100.3.132">http://10.100.3.132</a> and press the top left button.</dd>
   <dd>Hardware: the controller is a small box at the lower left corner of the LED arch - it's connected to a bigger metal box (the power supply) which has a black power cable going to the mains. If you disconnect that cable, the controller + the LEDs will stop. TLDR: pull the labelled plug from the wall.</dd>
 </dl>
+<dl>
+  <dt>What's controlling what?</dt>
+  <dd>The 24V power supply is going into a <a href="https://quinled.info/quinled-an-penta-plus/">QuinLED An-Penta-Plus</a>, an ESP32-based device that is running <a href="https://kno.wled.ge/">WLED</a> and has an ethernet port, which is connected to the hub's ethernet/internet. The LED strip is a "<a href="https://www.superlightingled.com/dc24v12v-high-density-cob-color-chasing-lights-addressable-rgb-led-strip-p-4940.html">High Density COB Color Chasing Lights Addressable RGB LED Strip</a>", made out of the classic individually-addressable WS2811 rgb pixels.</dd>
+</dl>
+<dl>
+  <dt>How many pixels is that?</dt>
+  <dd>There are 192 addressable "pixels" (each "pixel" is made out of 3 rgb dots, as far as I remember). I forgot how many are on the left, top, and right side - but I think they're symmetric-al-ish enough. Ping me to let me know the exact number if you end up measuring it! Cheers</dd>
+</dl>
 
-<br><br>
+<hr>
 <p>- greg sadetsky, F2 '23 - ping me on Zulip</p>
